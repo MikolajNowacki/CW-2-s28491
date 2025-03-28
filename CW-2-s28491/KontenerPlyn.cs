@@ -4,8 +4,8 @@ public class KontenerPlyn : Kontener, IHazardNotifier
 {
     public bool NiebezpiecznyLadunek { get; }
 
-    public KontenerPlyn(double wagaWlasna, double maksLadownosc, bool niebezpieczny)
-        : base("L", wagaWlasna, maksLadownosc)
+    public KontenerPlyn(double wysokosc, double glebokosc, double wagaWlasna, double maksLadownosc, bool niebezpieczny)
+        : base("L", wysokosc, glebokosc, wagaWlasna, maksLadownosc)
     {
         NiebezpiecznyLadunek = niebezpieczny;
     }

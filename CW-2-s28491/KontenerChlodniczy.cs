@@ -5,8 +5,8 @@ public class KontenerChlodniczy : Kontener
     public string RodzajProduktu { get; }
     public double Temperatura { get; }
 
-    public KontenerChlodniczy(double wagaWlasna, double maksLadownosc, string produkt, double temperatura)
-        : base("C", wagaWlasna, maksLadownosc)
+    public KontenerChlodniczy(double wysokosc, double glebokosc, double wagaWlasna, double maksLadownosc, string produkt, double temperatura)
+        : base("C", wysokosc, glebokosc, wagaWlasna, maksLadownosc)
     {
         RodzajProduktu = produkt;
         Temperatura = temperatura;

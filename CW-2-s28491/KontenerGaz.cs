@@ -4,8 +4,8 @@ public class KontenerGaz : Kontener, IHazardNotifier
 {
     public double Cisnienie { get; }
 
-    public KontenerGaz(double wagaWlasna, double maksLadownosc, double cisnienie)
-        : base("G", wagaWlasna, maksLadownosc)
+    public KontenerGaz(double wysokosc, double glebokosc, double wagaWlasna, double maksLadownosc, double cisnienie)
+        : base("G", wysokosc, glebokosc, wagaWlasna, maksLadownosc)
     {
         Cisnienie = cisnienie;
     }
