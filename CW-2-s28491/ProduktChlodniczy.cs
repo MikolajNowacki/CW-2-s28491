@@ -2,7 +2,7 @@
 
 public static class ProduktChlodniczy
 {
-    private static readonly Dictionary<string, (double min, double max)> _zakresy = new(StringComparer.OrdinalIgnoreCase) // dodałem też sprawdzanie maksymalnej temperatury w kontenerowcu (nie ma tego w wymaganiach ale ma dla mnie większy sens)
+    private static readonly Dictionary<string, (double min, double max)> _zakresy = new(StringComparer.OrdinalIgnoreCase) // dodałem maksymalną temperature dla produktu (nie ma tego w wymaganiach ale ma dla mnie większy sens)
     {
         { "Bananas", (13.3, 14) },
         { "Chocolate", (18, 21) },

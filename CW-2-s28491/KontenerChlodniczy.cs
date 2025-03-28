@@ -13,7 +13,7 @@ public class KontenerChlodniczy : Kontener
 
         var (minTemp, maxTemp) = ProduktChlodniczy.PobierzZakresTemperatury(produkt);
 
-        if (temperatura < minTemp || temperatura > maxTemp)     // dodałem też sprawdzanie maksymalnej temperatury w kontenerowcu (nie ma tego w wymaganiach ale ma to dla mnie większy sens)
+        if (temperatura < minTemp || temperatura > maxTemp)     // dodałem sprawdzanie czy kontenerowiec spełnia maksymalną temperature dla produktu (nie ma tego w wymaganiach ale ma to dla mnie większy sens)
         {
             throw new Exception($"Temperatura {temperatura}°C jest poza dopuszczalnym zakresem dla produktu {produkt}. Dozwolony zakres: {minTemp}°C - {maxTemp}°C.");
         }
