@@ -4,13 +4,17 @@ public abstract class Kontener
 {
     private static int _int = 1;
     public string NumerSeryjny { get; }
+    public double MasaLadunku { get; set; }
+    public double Wysokosc { get; }
+    public double Glebokosc { get; }
     public double WagaWlasna { get; }
     public double MaksymalnaLadownosc { get; }
-    public double MasaLadunku { get; protected set; }
 
-    protected Kontener(string typ, double wagaWlasna, double maksLadownosc)
+    protected Kontener(string typ, double wysokosc, double glebokosc, double wagaWlasna, double maksLadownosc)
     {
         NumerSeryjny = $"KON-{typ}-{_int++}";
+        Wysokosc = wysokosc;
+        Glebokosc = glebokosc;
         WagaWlasna = wagaWlasna;
         MaksymalnaLadownosc = maksLadownosc;
         MasaLadunku = 0;
@@ -19,9 +23,8 @@ public abstract class Kontener
     public virtual void Zaladuj(double masa)
     {
         if (MasaLadunku + masa > MaksymalnaLadownosc)
-        {
-            throw new OverfillException($"Przekroczono maksymalną ładowność kontenera {NumerSeryjny}");
-        }
+            throw new OverfillException($"Kontener {NumerSeryjny} przekroczyl dopuszczalna ladownosc.");
+        
         MasaLadunku += masa;
     }
 
@@ -32,6 +35,6 @@ public abstract class Kontener
 
     public override string ToString()
     {
-        return $"{NumerSeryjny} | Masa ładunku: {MasaLadunku}kg";
+        return $"[{NumerSeryjny}] Wys: {Wysokosc}cm, Gleb: {Glebokosc}cm, Masa ladunku: {MasaLadunku}kg";
     }
 }
